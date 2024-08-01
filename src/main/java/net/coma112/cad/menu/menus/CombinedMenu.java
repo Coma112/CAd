@@ -63,7 +63,17 @@ public class CombinedMenu extends PaginatedMenu implements Listener {
     @Override
     public void setMenuItems() {
         inventory.clear();
-        IntStream.range(startIndex, endIndex).forEach(index -> inventory.addItem(createAdItem(getList().get(index))));
+
+        if (getList().isEmpty() || startIndex >= getList().size()) {
+            addMenuBorder();
+            return;
+        }
+
+        int adjustedEndIndex = Math.min(endIndex, getList().size());
+
+        IntStream
+                .range(startIndex, adjustedEndIndex)
+                .forEach(index -> inventory.addItem(createAdItem(getList().get(index))));
 
         addMenuBorder();
     }
