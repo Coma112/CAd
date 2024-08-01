@@ -135,7 +135,7 @@ public class SQLite extends AbstractDatabase {
         String query = "SELECT * FROM ads WHERE PLAYER = ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1,  playerToGet.getName());
+            preparedStatement.setString(1, playerToGet.getName());
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

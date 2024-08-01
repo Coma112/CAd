@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b7c1ef4-273e-4f20-86ca-a9a81872c562" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_de.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_hu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/MySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/SQLite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/enums/LanguageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/enums/LanguageType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/menu/menus/CombinedMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/menu/menus/CombinedMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/menu/menus/OwnMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/menu/menus/OwnMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/processor/MessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/processor/MessageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/AdLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/AdLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/ConfigUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/ConfigUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/MenuUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/MenuUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/RegisterUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/RegisterUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/StartingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/StartingUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,26 +92,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.CAd [clean].executor": "Run",
-    "Gradle.CAd [shadowJar].executor": "Run",
-    "Gradle.CTemplate [wrapper].executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kulas/Desktop/Projektek/CAd/src/main/java/net/coma112/cad/version",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.CAd [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CAd [shadowJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CTemplate [wrapper].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kulas/Desktop/Projektek/CAd/src/main/java/net/coma112/cad/version&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.saveactions&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kulas\Desktop\Projektek\CAd\src\main\java\net\coma112\cad\version" />
@@ -199,7 +212,9 @@
       <workItem from="1722536568234" duration="42000" />
       <workItem from="1722536829369" duration="7606000" />
       <workItem from="1722545485268" duration="1316000" />
-      <workItem from="1722547286311" duration="1689000" />
+      <workItem from="1722547286311" duration="2187000" />
+      <workItem from="1722551172335" duration="85000" />
+      <workItem from="1722552212664" duration="298000" />
     </task>
     <servers />
   </component>

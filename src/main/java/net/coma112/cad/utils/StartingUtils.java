@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 import static net.coma112.cad.version.MinecraftVersion.determineVersion;
 
-public class StartingUtils {
+public final class StartingUtils {
     private static boolean isSupported;
 
     public static void registerListenersAndCommands() {

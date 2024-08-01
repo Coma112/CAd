@@ -5,6 +5,7 @@ expires-in: 7 # In days. The advertisement will expire in {} day from the starti
 title-description-split-sign: ";" # this is what separates the title from the description
 max-ads-per-player: 3 # This is how many ad a player can upload.
 
+# This is the message that will be sent when someone's creates a new ad.
 advertisement-broadcast:
   - ""
   - "&8&l━━━━━━━━━━━━━[━━&d&lNEW ADVERTISEMENT!&8&l━━]━━━━━━━━━━━━━"
@@ -31,6 +32,7 @@ database:
     poolsize: 10
     lifetime: 1800000
 
+# This is the menu item in the combined menu
 ad-item-combined:
   material: "PAPER"
   amount: 1
@@ -44,6 +46,7 @@ ad-item-combined:
     - ""
     - "&7Click here to send a message!"
 
+# This is the menu item in the own menu
 ad-item-own:
   material: "PAPER"
   amount: 1
@@ -57,6 +60,7 @@ ad-item-own:
     - ""
     - "&7Click here to delete it!"
 
+# Menu configuration
 menus:
   main:
     title: "&5&lSELECT..."

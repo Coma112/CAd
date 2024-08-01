@@ -3,14 +3,16 @@ package net.coma112.cad.database;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Getter;
-import net.coma112.cad.CAd;
 import net.coma112.cad.manager.Advertisement;
 import net.coma112.cad.utils.AdLogger;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +42,8 @@ public class MySQL extends AbstractDatabase {
         hikariConfig.setPassword(pass);
 
         hikariConfig.addDataSourceProperty("useSSL", String.valueOf(ssl));
-        if (!certificateVerification) hikariConfig.addDataSourceProperty("verifyServerCertificate", String.valueOf(false));
+        if (!certificateVerification)
+            hikariConfig.addDataSourceProperty("verifyServerCertificate", String.valueOf(false));
         hikariConfig.addDataSourceProperty("cachePrepStmts", "true");
         hikariConfig.addDataSourceProperty("encoding", "UTF-8");
         hikariConfig.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");

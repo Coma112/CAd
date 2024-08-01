@@ -1,7 +1,6 @@
 package net.coma112.cad.menu.menus;
 
 import net.coma112.cad.CAd;
-import net.coma112.cad.database.AbstractDatabase;
 import net.coma112.cad.enums.keys.ConfigKeys;
 import net.coma112.cad.enums.keys.ItemKeys;
 import net.coma112.cad.enums.keys.MessageKeys;

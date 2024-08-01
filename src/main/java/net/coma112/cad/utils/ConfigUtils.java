@@ -7,15 +7,16 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ConfigUtils {
-    @Getter private YamlConfiguration yml;
-    @Getter private String name;
+    @Getter
+    private YamlConfiguration yml;
+    @Getter
+    private String name;
     private File config;
 
     public ConfigUtils(@NotNull String dir, @NotNull String name) {

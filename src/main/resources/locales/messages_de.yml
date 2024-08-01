@@ -1,0 +1,17 @@
+message:
+  help:
+    - "&8&l━━━━━━━━━━━━━━━━━━━━━━━[━━&d&lCAD&8&l━━]━━━━━━━━━━━━━━━━━━━━━━━"
+    - ""
+    - "&d/cad reload &f- &7Lädt das Plugin neu."
+    - "&d/cad menu &f- &7Öffnet das Hauptmenü."
+    - "&d/cad new &7(&dtitel &7(getrennt mit ;) &dbeschreibung&7)  &f- &7Erstellt eine neue Anzeige."
+    - "&d/cad remove &7(&did&7) &f- &7Entfernt die Anzeige."
+    - ""
+    - "&8&l━━━━━━━━━━━━━━━━━━━━━━━[━━&d&lCAD&8&l━━]━━━━━━━━━━━━━━━━━━━━━━━"
+  first-page: "&d&lCAD &8| &cDu bist bereits auf der ersten Seite!"
+  last-page: "&d&lCAD &8| &cDu bist bereits auf der letzten Seite!"
+  reload: "&d&lCAD &8| &aIch habe die Dateien erfolgreich neu geladen!"
+  reached-max-ads: "&d&lCAD &8| &cDu hast das maximale Limit erreicht!"
+  new-usage: "&d&lCAD &8| &cDu musst den Titel und die Beschreibung mit ';' trennen!"
+  not-exists: "&d&lCAD &8| &cEs gibt keine Anzeige mit dieser ID!"
+  successful-remove: "&d&lCAD &8| &aDu hast diese Anzeige erfolgreich entfernt!"

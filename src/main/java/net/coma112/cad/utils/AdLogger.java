@@ -7,7 +7,7 @@ import org.apache.logging.log4j.message.ParameterizedMessage;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
-public class AdLogger {
+public final class AdLogger {
     static final Logger logger = LogManager.getLogger("CAd");
 
     public static void info(@NotNull String msg, @NotNull Object... objs) {
