@@ -1,0 +1,94 @@
+language: "en" # Supported languages -> hu, de, en
+
+database:
+  type: "sqlite" # Supported types -> mysql, sqlite
+  mysql:
+    host: localhost
+    port: 3306
+    database: template
+    username: root
+    password: ""
+    # You shouldn't touch this part except if you are familiar with it.
+    ssl: false
+    certificateverification: false
+    poolsize: 10
+    lifetime: 1800000
+
+ad-item-combined:
+  material: "PAPER"
+  amount: 1
+  name: "&5&l{title} &7(&8{id}&7)"
+  lore:
+    - "&7({player})"
+    - ""
+    - "&7- &d{description}"
+    - ""
+    - "&5Expiration: &d{expiration}"
+    - ""
+    - "&7Click here to send a message!"
+
+ad-item-own:
+  material: "PAPER"
+  amount: 1
+  name: "&5&l{title} &7(&8{id}&7)"
+  lore:
+    - "&7({player})"
+    - ""
+    - "&7- &d{description}"
+    - ""
+    - "&5Expiration: &d{expiration}"
+    - ""
+    - "&7Click here to delete it!"
+
+menus:
+  main:
+    title: "&5&lSELECT..."
+    size: 9
+    combined-menu-item:
+      amount: 1
+      material: SHULKER_SHELL
+      name: "&5&lEVERY &5Advertisement"
+      lore:
+        - ""
+        - "&7Click here to open the menu."
+      slot: 3
+    own-menu-item:
+      amount: 1
+      material: POPPED_CHORUS_FRUIT
+      name: "&5&lYOUR &5Advertisements"
+      lore:
+        - ""
+        - "&7Click here to open the menu."
+      slot: 5
+
+  combined:
+    title: "&5&lEVERY ADVERTISEMENT"
+    size: 54
+    update-tick: 2
+    back-item:
+      amount: 1
+      material: RED_STAINED_GLASS_PANE
+      name: "&cBack"
+      slot: 45
+    forward-item:
+      amount: 1
+      material: GREEN_STAINED_GLASS_PANE
+      name: "&aForward"
+      slot: 53
+
+  own:
+    title: "&5&lYOUR ADVERTISEMENTS"
+    size: 54
+    update-tick: 2
+    back-item:
+      amount: 1
+      material: RED_STAINED_GLASS_PANE
+      name: "&cBack"
+      slot: 45
+    forward-item:
+      amount: 1
+      material: GREEN_STAINED_GLASS_PANE
+      name: "&aForward"
+      slot: 53
+
+command-on-click: "msg {target} Hello! I'm interested in {adName}!"

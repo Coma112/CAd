@@ -1,0 +1,5 @@
+name: CAd
+version: '1.0'
+main: net.coma112.cad.CAd
+api-version: '1.21'
+authors: [ Coma112 (Vulcan Studio) ]
