@@ -32,6 +32,7 @@ public class CombinedMenu extends PaginatedMenu implements Listener {
     public void addMenuBorder() {
         inventory.setItem(ConfigKeys.COMBINED_BACK_SLOT.getInt(), ItemKeys.COMBINED_BACK.getItem());
         inventory.setItem(ConfigKeys.COMBINED_FORWARD_SLOT.getInt(), ItemKeys.COMBINED_FORWARD.getItem());
+        inventory.setItem(ConfigKeys.COMBINED_BACK_TO_MAIN_SLOT.getInt(), ItemKeys.COMBINED_BACK_TO_MAIN.getItem());
     }
 
     @Override
@@ -46,7 +47,7 @@ public class CombinedMenu extends PaginatedMenu implements Listener {
 
     @Override
     public int getMaxItemsPerPage() {
-        return ConfigKeys.COMBINED_SIZE.getInt() - 2;
+        return ConfigKeys.COMBINED_SIZE.getInt() - 3;
     }
 
     @Override
@@ -55,16 +56,16 @@ public class CombinedMenu extends PaginatedMenu implements Listener {
     }
 
     @Override
+    public List<Advertisement> getList() {
+        return CAd.getDatabase().getAdvertisements();
+    }
+
+    @Override
     public void setMenuItems() {
-        List<Advertisement> advertisements = CAd.getDatabase().getAdvertisements();
         inventory.clear();
+        IntStream.range(startIndex, endIndex).forEach(index -> inventory.addItem(createAdItem(getList().get(index))));
 
         addMenuBorder();
-
-        int startIndex = page * getMaxItemsPerPage();
-        int endIndex = Math.min(startIndex + getMaxItemsPerPage(), advertisements.size());
-
-        IntStream.range(startIndex, endIndex).forEach(index -> inventory.addItem(createAdItem(advertisements.get(index))));
     }
 
     @Override
@@ -74,14 +75,10 @@ public class CombinedMenu extends PaginatedMenu implements Listener {
 
         event.setCancelled(true);
 
-        List<Advertisement> advertisements = CAd.getDatabase().getAdvertisements();
         int clickedIndex = event.getSlot();
 
         if (clickedIndex == ConfigKeys.COMBINED_FORWARD_SLOT.getInt()) {
-            int nextPageIndex = page + 1;
-            int totalPages = (int) Math.ceil((double) advertisements.size() / getMaxItemsPerPage());
-
-            if (nextPageIndex >= totalPages) {
+            if (nextPage >= totalPages) {
                 player.sendMessage(MessageKeys.LAST_PAGE.getMessage());
                 return;
             } else {
@@ -99,19 +96,17 @@ public class CombinedMenu extends PaginatedMenu implements Listener {
             }
         }
 
-        if (clickedIndex >= 0 && clickedIndex < advertisements.size()) {
-            Advertisement selectedAdvertisement = advertisements.get(clickedIndex);
+        if (clickedIndex == ConfigKeys.COMBINED_BACK_TO_MAIN_SLOT.getInt()) {
+            inventory.close();
+            new MainMenu(MenuUtils.getMenuUtils(player)).open();
+        }
+
+        if (clickedIndex >= 0 && clickedIndex < getList().size()) {
+            Advertisement selectedAdvertisement = getList().get(clickedIndex);
             Player target = player.getServer().getPlayerExact(selectedAdvertisement.player());
 
-            if (target == null) {
-                player.sendMessage("offline a tag");
-                return;
-            }
-
-            if (target.isDead()) {
-                player.sendMessage("halott a tag");
-                return;
-            }
+            if (target == null) return;
+            if (target.isDead()) return;
 
             inventory.close();
             player.performCommand(ConfigKeys.COMMAND_ON_CLICK

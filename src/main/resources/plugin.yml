@@ -1,5 +1,6 @@
 name: CAd
-version: '1.0'
+version: '1.0.0'
 main: net.coma112.cad.CAd
-api-version: '1.21'
+api-version: '1.18'
+folia-supported: true
 authors: [ Coma112 (Vulcan Studio) ]

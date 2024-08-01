@@ -1,4 +1,21 @@
 language: "en" # Supported languages -> hu, de, en
+date-format: "yyyy-MM-dd" # This format will appear in the database and in the GUI.
+command-on-click: "msg {target} Hello! I'm interested in {adName}!"
+expires-in: 7 # In days. The advertisement will expire in {} day from the starting date.
+title-description-split-sign: ";" # this is what separates the title from the description
+max-ads-per-player: 3 # This is how many ad a player can upload.
+
+advertisement-broadcast:
+  - ""
+  - "&8&l━━━━━━━━━━━━━[━━&d&lNEW ADVERTISEMENT!&8&l━━]━━━━━━━━━━━━━"
+  - ""
+  - "&5{player} &dposted a new advertisement!"
+  - ""
+  - "&5{title}"
+  - "&7{description}"
+  - ""
+  - "&8&l━━━━━━━━━━━━━[━━&d&lNEW ADVERTISEMENT!&8&l━━]━━━━━━━━━━━━━"
+  - ""
 
 database:
   type: "sqlite" # Supported types -> mysql, sqlite
@@ -75,6 +92,11 @@ menus:
       material: GREEN_STAINED_GLASS_PANE
       name: "&aForward"
       slot: 53
+    back-to-main-item:
+      amount: 1
+      material: BARRIER
+      name: "&eBack to main"
+      slot: 49
 
   own:
     title: "&5&lYOUR ADVERTISEMENTS"
@@ -90,5 +112,8 @@ menus:
       material: GREEN_STAINED_GLASS_PANE
       name: "&aForward"
       slot: 53
-
-command-on-click: "msg {target} Hello! I'm interested in {adName}!"
+    back-to-main-item:
+      amount: 1
+      material: BARRIER
+      name: "&eBack to main"
+      slot: 49

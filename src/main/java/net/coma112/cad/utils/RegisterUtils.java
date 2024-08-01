@@ -24,15 +24,15 @@ public class RegisterUtils {
 
     public static void registerCommands() {
         BukkitCommandHandler handler = BukkitCommandHandler.create(CAd.getInstance());
-        // add your commands here
+
         handler.register(new CommandAdvertisement());
     }
 
     private static Set<Class<? extends Listener>> getListenerClasses() {
         Set<Class<? extends Listener>> listenerClasses = new HashSet<>();
-        // add your listeners here
+
         listenerClasses.add(MenuListener.class);
-        //listenerClasses.add(JoinListener.class);
+
         return listenerClasses;
     }
 }

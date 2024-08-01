@@ -9,10 +9,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class MainMenu extends Menu implements Listener {
 
-    public MainMenu(MenuUtils menuUtils) {
+    public MainMenu(@NotNull MenuUtils menuUtils) {
         super(menuUtils);
     }
 

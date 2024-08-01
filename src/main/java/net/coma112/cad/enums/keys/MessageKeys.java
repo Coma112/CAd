@@ -7,9 +7,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public enum MessageKeys {
-    TEST("message.test"),
     LAST_PAGE("message.last-page"),
     FIRST_PAGE("message.first-page"),
+    RELOAD("message.reload"),
+    REACHED_MAX_ADS("message.reached-max-ads"),
+    NEW_USAGE("message.new-usage"),
+    NOT_EXISTS("message.not-exists"),
+    SUCCESSFUL_REMOVE("message.successful-remove"),
     HELP("message.help");
 
     private final String path;

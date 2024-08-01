@@ -10,17 +10,15 @@ import net.coma112.cad.database.SQLite;
 import net.coma112.cad.enums.DatabaseType;
 import net.coma112.cad.enums.LanguageType;
 import net.coma112.cad.enums.keys.ConfigKeys;
-import net.coma112.cad.enums.keys.MessageKeys;
 import net.coma112.cad.language.Language;
-import net.coma112.cad.processor.ExpiredProcessor;
 import net.coma112.cad.utils.AdLogger;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
 import java.util.Objects;
 
-import static net.coma112.cad.utils.StartingUtils.registerListenersAndCommands;
-import static net.coma112.cad.utils.StartingUtils.saveResourceIfNotExists;
+import static net.coma112.cad.utils.StartingUtils.*;
 
 
 public final class CAd extends JavaPlugin {
@@ -33,16 +31,21 @@ public final class CAd extends JavaPlugin {
     @Override
     public void onLoad() {
         instance = this;
+        scheduler = UniversalScheduler.getScheduler(this);
+        checkVersion();
     }
 
     @Override
     public void onEnable() {
+        checkVM();
+
         saveDefaultConfig();
-        scheduler = UniversalScheduler.getScheduler(this);
         initializeComponents();
         registerListenersAndCommands();
         initializeDatabaseManager();
-        ExpiredProcessor.startExpirationCheckTask();
+        startExpirationCheckTask();
+
+        new Metrics(this, 22861);
     }
 
     @Override

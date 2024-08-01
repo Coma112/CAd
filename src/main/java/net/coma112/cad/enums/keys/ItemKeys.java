@@ -13,9 +13,11 @@ public enum ItemKeys {
 
     COMBINED_BACK("menus.combined.back-item"),
     COMBINED_FORWARD("menus.combined.forward-item"),
+    COMBINED_BACK_TO_MAIN("menus.combined.back-to-main-item"),
 
     OWN_BACK("menus.own.back-item"),
-    OWN_FORWARD("menus.own.forward-item");
+    OWN_FORWARD("menus.own.forward-item"),
+    OWN_BACK_TO_MAIN("menus.own.back-to-main-item");
 
     private final String path;
 

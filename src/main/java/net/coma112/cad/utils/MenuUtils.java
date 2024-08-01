@@ -27,6 +27,5 @@ public class MenuUtils {
 
         return menuMap.get(player);
     }
-
 }
 

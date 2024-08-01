@@ -9,7 +9,11 @@ import java.util.List;
 public abstract class AbstractDatabase {
     public abstract void createAdvertisement(@NotNull Player player, @NotNull String title, @NotNull String description, @NotNull String startingDate, @NotNull String endingDate);
 
-    public abstract void deleteAdvertisement(@NotNull Advertisement advertisement);
+    public abstract int getAdvertisementsCount(@NotNull Player player);
+
+    public abstract boolean exists(int id);
+
+    public abstract void deleteAdvertisement(int id);
 
     public abstract void deleteExpiredAdvertisements();
 

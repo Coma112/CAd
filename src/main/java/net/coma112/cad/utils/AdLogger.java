@@ -3,7 +3,6 @@ package net.coma112.cad.utils;
 import net.coma112.cad.processor.MessageProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.Message;
 import org.apache.logging.log4j.message.ParameterizedMessage;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
@@ -24,8 +23,6 @@ public class AdLogger {
     }
 
     public static void colored(@NotNull String msg, @NotNull Object... objs) {
-        final Message message = new ParameterizedMessage(msg, objs);
-        Bukkit.getConsoleSender().sendMessage(MessageProcessor.process(message.getFormattedMessage()));
+        Bukkit.getConsoleSender().sendMessage(MessageProcessor.process(new ParameterizedMessage(msg, objs).getFormattedMessage()));
     }
-
 }

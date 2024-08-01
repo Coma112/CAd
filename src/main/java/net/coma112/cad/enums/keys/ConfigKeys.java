@@ -4,10 +4,18 @@ import net.coma112.cad.CAd;
 import net.coma112.cad.processor.MessageProcessor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public enum ConfigKeys {
     LANGUAGE("language"),
     DATABASE("database.type"),
+    DATEFORMAT("date-format"),
     COMMAND_ON_CLICK("command-on-click"),
+    EXPIRES_IN("expires-in"),
+    TITLE_DESCRIPTION_SEPARATOR("title-description-split-sign"),
+    ADVERTISEMENT_BROADCAST("advertisement-broadcast"),
+    MAX_AD("max-ads-per-player"),
+
     MAIN_TITLE("menus.main.title"),
     MAIN_SIZE("menus.main.size"),
     MAIN_COMBINED_SLOT("menus.main.combined-menu-item.slot"),
@@ -18,11 +26,13 @@ public enum ConfigKeys {
     COMBINED_UPDATE_TICK("menus.combined.update-tick"),
     COMBINED_BACK_SLOT("menus.combined.back-item.slot"),
     COMBINED_FORWARD_SLOT("menus.combined.forward-item.slot"),
+    COMBINED_BACK_TO_MAIN_SLOT("menus.combined.back-to-main-item.slot"),
 
     OWN_TITLE("menus.own.title"),
     OWN_BACK_SLOT("menus.own.back-item.slot"),
     OWN_FORWARD_SLOT("menus.own.forward-item.slot"),
     OWN_SIZE("menus.own.size"),
+    OWN_BACK_TO_MAIN_SLOT("menus.own.back-to-main-item.slot"),
     OWN_UPDATE_TICK("menus.own.update-tick");
 
 
@@ -42,5 +52,12 @@ public enum ConfigKeys {
 
     public int getInt() {
         return CAd.getInstance().getConfiguration().getInt(path);
+    }
+
+    public List<String> getStrings() {
+        return CAd.getInstance().getConfiguration().getList(path)
+                .stream()
+                .map(MessageProcessor::process)
+                .toList();
     }
 }

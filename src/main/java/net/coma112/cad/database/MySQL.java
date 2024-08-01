@@ -3,6 +3,7 @@ package net.coma112.cad.database;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Getter;
+import net.coma112.cad.CAd;
 import net.coma112.cad.manager.Advertisement;
 import net.coma112.cad.utils.AdLogger;
 import org.bukkit.configuration.ConfigurationSection;
@@ -76,7 +77,6 @@ public class MySQL extends AbstractDatabase {
             preparedStatement.setString(3, description);
             preparedStatement.setString(4, startingDate);
             preparedStatement.setString(5, endingDate);
-
             preparedStatement.execute();
         } catch (SQLException exception) {
             AdLogger.error(exception.getMessage());
@@ -84,14 +84,30 @@ public class MySQL extends AbstractDatabase {
     }
 
     @Override
-    public void deleteAdvertisement(@NotNull Advertisement advertisement) {
+    public void deleteAdvertisement(int id) {
         String deleteQuery = "DELETE FROM ads WHERE ID = ?";
 
         try (PreparedStatement preparedStatement = getConnection().prepareStatement(deleteQuery)) {
-            preparedStatement.setInt(1, advertisement.id());
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException exception) {
             AdLogger.error(exception.getMessage());
+        }
+    }
+
+    @Override
+    public boolean exists(int id) {
+        String query = "SELECT * FROM ads WHERE ID = ?";
+
+        try {
+            try (PreparedStatement preparedStatement = getConnection().prepareStatement(query)) {
+                preparedStatement.setInt(1, id);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+                return resultSet.next();
+            }
+        } catch (SQLException exception) {
+            throw new RuntimeException(exception);
         }
     }
 
@@ -138,6 +154,7 @@ public class MySQL extends AbstractDatabase {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, playerToGet.getName());
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -155,6 +172,21 @@ public class MySQL extends AbstractDatabase {
         }
 
         return advertisements;
+    }
+
+    @Override
+    public int getAdvertisementsCount(@NotNull Player player) {
+        String query = "SELECT COUNT(*) AS count FROM ads WHERE PLAYER = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, player.getName());
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) return resultSet.getInt("count");
+        } catch (SQLException exception) {
+            AdLogger.error(exception.getMessage());
+        }
+        return 0;
     }
 
     @Override
