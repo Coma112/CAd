@@ -15,3 +15,4 @@ message:
   new-usage: "&d&lCAD &8| &cDu musst den Titel und die Beschreibung mit ';' trennen!"
   not-exists: "&d&lCAD &8| &cEs gibt keine Anzeige mit dieser ID!"
   successful-remove: "&d&lCAD &8| &aDu hast diese Anzeige erfolgreich entfernt!"
+  not-enough-money: "&d&lCAD &8| &cDu hast nicht genug Geld, um eine Anzeige zu schalten!"

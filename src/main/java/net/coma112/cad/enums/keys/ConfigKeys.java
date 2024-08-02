@@ -15,6 +15,7 @@ public enum ConfigKeys {
     TITLE_DESCRIPTION_SEPARATOR("title-description-split-sign"),
     ADVERTISEMENT_BROADCAST("advertisement-broadcast"),
     MAX_AD("max-ads-per-player"),
+    AD_PRICE("ad-price"),
 
     MAIN_TITLE("menus.main.title"),
     MAIN_SIZE("menus.main.size"),

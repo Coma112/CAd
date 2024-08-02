@@ -3,6 +3,7 @@ package net.coma112.cad.command;
 import net.coma112.cad.CAd;
 import net.coma112.cad.enums.keys.ConfigKeys;
 import net.coma112.cad.enums.keys.MessageKeys;
+import net.coma112.cad.hooks.Vault;
 import net.coma112.cad.menu.menus.MainMenu;
 import net.coma112.cad.utils.MenuUtils;
 import org.bukkit.Bukkit;
@@ -48,6 +49,11 @@ public class CommandAdvertisement {
             return;
         }
 
+        if (Vault.getEconomy().getBalance(player) < ConfigKeys.AD_PRICE.getInt()) {
+            player.sendMessage(MessageKeys.NOT_ENOUGH_MONEY.getMessage());
+            return;
+        }
+
         SimpleDateFormat dateFormat = new SimpleDateFormat(ConfigKeys.DATEFORMAT.getString());
         Date now = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -65,6 +71,7 @@ public class CommandAdvertisement {
         String description = parts[1].trim();
 
         CAd.getDatabase().createAdvertisement(player, (title + " ").trim(), (description + " ").trim(), dateFormat.format(now), dateFormat.format(calendar.getTime()));
+        Vault.getEconomy().withdrawPlayer(player, ConfigKeys.AD_PRICE.getInt());
         Bukkit.getOnlinePlayers().forEach(players -> ConfigKeys.ADVERTISEMENT_BROADCAST.getStrings().forEach(line -> {
             String message = line
                     .replace("{title}", title)

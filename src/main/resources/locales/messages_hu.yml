@@ -15,3 +15,4 @@ message:
   new-usage: "&d&lCAD &8| &cA címet és a leírást pontosvesszővel (';') kell elválasztanod!"
   not-exists: "&d&lCAD &8| &cNincs ilyen azonosítójú hirdetés!"
   successful-remove: "&d&lCAD &8| &aSikeresen eltávolítottad ezt a hirdetést!"
+  not-enough-money: "&d&lCAD &8| &cNincs elég pénzed a hirdetés feladásához!"

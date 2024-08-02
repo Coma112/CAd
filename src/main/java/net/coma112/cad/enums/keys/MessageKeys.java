@@ -14,6 +14,7 @@ public enum MessageKeys {
     NEW_USAGE("message.new-usage"),
     NOT_EXISTS("message.not-exists"),
     SUCCESSFUL_REMOVE("message.successful-remove"),
+    NOT_ENOUGH_MONEY("message.not-enough-money"),
     HELP("message.help");
 
     private final String path;

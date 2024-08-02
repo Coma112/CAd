@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'net.coma112.cad'
-version = '1.0'
+version = '1.0.1'
 
 repositories {
     mavenCentral()
@@ -23,6 +23,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+    compileOnly('com.github.MilkBowl:VaultAPI:1.7.1') { exclude group: 'org.bukkit', module: 'bukkit' }
     implementation 'com.github.Revxrsal.Lamp:common:3.2.1'
     implementation 'com.github.Revxrsal.Lamp:bukkit:3.2.1'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.1.0'

@@ -1,6 +1,7 @@
 package net.coma112.cad.utils;
 
 import net.coma112.cad.CAd;
+import net.coma112.cad.update.UpdateChecker;
 import net.coma112.cad.version.MinecraftVersion;
 import net.coma112.cad.version.ServerVersionSupport;
 import net.coma112.cad.version.VersionSupport;
@@ -13,6 +14,7 @@ import java.util.regex.Pattern;
 
 import static net.coma112.cad.version.MinecraftVersion.determineVersion;
 
+@SuppressWarnings("deprecation")
 public final class StartingUtils {
     private static boolean isSupported;
 
@@ -100,5 +102,11 @@ public final class StartingUtils {
         } catch (NumberFormatException exception) {
             return -1;
         }
+    }
+
+    public static void checkUpdates() {
+        new UpdateChecker(118559).getVersion(version -> {
+            AdLogger.info(CAd.getInstance().getDescription().getVersion().equals(version) ? "Everything is up to date" : "You are using an outdated version! Please download the new version so that your server is always fresh! The newest version: " + version);
+        });
     }
 }

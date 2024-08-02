@@ -22,10 +22,14 @@ import static net.coma112.cad.utils.StartingUtils.*;
 
 
 public final class CAd extends JavaPlugin {
-    @Getter private static CAd instance;
-    @Getter private static AbstractDatabase database;
-    @Getter private Language language;
-    @Getter private TaskScheduler scheduler;
+    @Getter
+    private static CAd instance;
+    @Getter
+    private static AbstractDatabase database;
+    @Getter
+    private Language language;
+    @Getter
+    private TaskScheduler scheduler;
     private Config config;
 
     @Override
@@ -44,6 +48,7 @@ public final class CAd extends JavaPlugin {
         registerListenersAndCommands();
         initializeDatabaseManager();
         startExpirationCheckTask();
+        checkUpdates();
 
         new Metrics(this, 22861);
     }

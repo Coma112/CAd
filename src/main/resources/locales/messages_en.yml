@@ -15,3 +15,4 @@ message:
   new-usage: "&d&lCAD &8| &cYou need to separate the title and the description with ';'!"
   not-exists: "&d&lCAD &8| &cThere is no ad with this id!"
   successful-remove: "&d&lCAD &8| &aYou have successfully removed this ad!"
+  not-enough-money: "&d&lCAD &8| &cYou don't have enough money to post!"

@@ -4,6 +4,7 @@ command-on-click: "msg {target} Hello! I'm interested in {adName}!"
 expires-in: 7 # In days. The advertisement will expire in {} day from the starting date.
 title-description-split-sign: ";" # this is what separates the title from the description
 max-ads-per-player: 3 # This is how many ad a player can upload.
+ad-price: 500 # This is how much an advertisement costs. (Vault plugin)
 
 # This is the message that will be sent when someone's creates a new ad.
 advertisement-broadcast:
