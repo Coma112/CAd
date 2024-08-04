@@ -36,6 +36,7 @@ public final class CAd extends JavaPlugin {
     public void onLoad() {
         instance = this;
         scheduler = UniversalScheduler.getScheduler(this);
+
         checkVersion();
     }
 
@@ -66,6 +67,8 @@ public final class CAd extends JavaPlugin {
         config = new Config();
 
         saveResourceIfNotExists("locales/messages_en.yml");
+        saveResourceIfNotExists("locales/messages_hu.yml");
+        saveResourceIfNotExists("locales/messages_de.yml");
 
         language = new Language("messages_" + LanguageType.valueOf(ConfigKeys.LANGUAGE.getString()));
     }

@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b7c1ef4-273e-4f20-86ca-a9a81872c562" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/hooks/Vault.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/update/UpdateChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/events/AdCreateEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/events/AdRemoveEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/hooks/Webhook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/listener/AdCreateListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/listener/AdRemoveListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/CAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/CAd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/command/CommandAdvertisement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/command/CommandAdvertisement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/MySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/database/SQLite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/enums/keys/ConfigKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/enums/keys/ConfigKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/enums/keys/MessageKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/enums/keys/MessageKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/StartingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/StartingUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/RegisterUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/coma112/cad/utils/RegisterUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/locales/messages_de.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_de.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/locales/messages_en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/locales/messages_hu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locales/messages_hu.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +102,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kulas/Desktop/Projektek/CAd/src/main/java/net/coma112/cad/version&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kulas/Desktop/Projektek/CStaff/CStaff&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -214,7 +214,12 @@
       <workItem from="1722547286311" duration="2187000" />
       <workItem from="1722551172335" duration="85000" />
       <workItem from="1722552212664" duration="989000" />
-      <workItem from="1722589612951" duration="1220000" />
+      <workItem from="1722589612951" duration="1267000" />
+      <workItem from="1722591519331" duration="3000" />
+      <workItem from="1722593904845" duration="12000" />
+      <workItem from="1722594729132" duration="695000" />
+      <workItem from="1722644573936" duration="489000" />
+      <workItem from="1722749117476" duration="2733000" />
     </task>
     <servers />
   </component>

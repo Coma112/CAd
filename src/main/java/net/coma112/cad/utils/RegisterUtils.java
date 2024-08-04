@@ -2,6 +2,8 @@ package net.coma112.cad.utils;
 
 import net.coma112.cad.CAd;
 import net.coma112.cad.command.CommandAdvertisement;
+import net.coma112.cad.listener.AdCreateListener;
+import net.coma112.cad.listener.AdRemoveListener;
 import net.coma112.cad.menu.MenuListener;
 import org.bukkit.event.Listener;
 import revxrsal.commands.bukkit.BukkitCommandHandler;
@@ -32,6 +34,8 @@ public final class RegisterUtils {
         Set<Class<? extends Listener>> listenerClasses = new HashSet<>();
 
         listenerClasses.add(MenuListener.class);
+        listenerClasses.add(AdCreateListener.class);
+        listenerClasses.add(AdRemoveListener.class);
 
         return listenerClasses;
     }

@@ -2,6 +2,8 @@ package net.coma112.cad.database;
 
 import lombok.Getter;
 import net.coma112.cad.CAd;
+import net.coma112.cad.events.AdCreateEvent;
+import net.coma112.cad.events.AdRemoveEvent;
 import net.coma112.cad.manager.Advertisement;
 import net.coma112.cad.utils.AdLogger;
 import org.bukkit.entity.Player;
@@ -45,6 +47,8 @@ public class SQLite extends AbstractDatabase {
             preparedStatement.setString(4, startingDate);
             preparedStatement.setString(5, endingDate);
             preparedStatement.execute();
+
+            CAd.getInstance().getServer().getPluginManager().callEvent(new AdCreateEvent(player.getName(), title, description, endingDate));
         } catch (SQLException exception) {
             AdLogger.error(exception.getMessage());
         }
@@ -83,11 +87,29 @@ public class SQLite extends AbstractDatabase {
 
     @Override
     public void deleteAdvertisement(int id) {
+        String selectQuery = "SELECT * FROM ads WHERE ID = ?";
         String deleteQuery = "DELETE FROM ads WHERE ID = ?";
 
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(deleteQuery)) {
-            preparedStatement.setInt(1, id);
-            preparedStatement.executeUpdate();
+        try (PreparedStatement selectStatement = getConnection().prepareStatement(selectQuery)) {
+            selectStatement.setInt(1, id);
+            ResultSet resultSet = selectStatement.executeQuery();
+
+            if (resultSet.next()) {
+                int adID = resultSet.getInt("ID");
+                String player = resultSet.getString("PLAYER");
+                String title = resultSet.getString("TITLE");
+                String description = resultSet.getString("DESCRIPTION");
+                String startingDate = resultSet.getString("STARTING_DATE");
+                String endingDate = resultSet.getString("ENDING_DATE");
+
+                CAd.getInstance().getServer().getPluginManager().callEvent(new AdRemoveEvent(adID, player, title, description, startingDate, endingDate));
+            }
+
+            try (PreparedStatement deleteStatement = getConnection().prepareStatement(deleteQuery)) {
+                deleteStatement.setInt(1, id);
+                deleteStatement.executeUpdate();
+            }
+
         } catch (SQLException exception) {
             AdLogger.error(exception.getMessage());
         }

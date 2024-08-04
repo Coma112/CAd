@@ -34,8 +34,33 @@ public enum ConfigKeys {
     OWN_FORWARD_SLOT("menus.own.forward-item.slot"),
     OWN_SIZE("menus.own.size"),
     OWN_BACK_TO_MAIN_SLOT("menus.own.back-to-main-item.slot"),
-    OWN_UPDATE_TICK("menus.own.update-tick");
+    OWN_UPDATE_TICK("menus.own.update-tick"),
 
+    WEBHOOK_AD_CREATED_EMBED_URL("webhook.ad-create-embed.url"),
+    WEBHOOK_AD_CREATED_EMBED_ENABLED("webhook.ad-create-embed.enabled"),
+    WEBHOOK_AD_CREATED_EMBED_TITLE("webhook.ad-create-embed.title"),
+    WEBHOOK_AD_CREATED_EMBED_DESCRIPTION("webhook.ad-create-embed.description"),
+    WEBHOOK_AD_CREATED_EMBED_COLOR("webhook.ad-create-embed.color"),
+    WEBHOOK_AD_CREATED_EMBED_AUTHOR_NAME("webhook.ad-create-embed.author-name"),
+    WEBHOOK_AD_CREATED_EMBED_AUTHOR_URL("webhook.ad-create-embed.author-url"),
+    WEBHOOK_AD_CREATED_EMBED_AUTHOR_ICON("webhook.ad-create-embed.author-icon"),
+    WEBHOOK_AD_CREATED_EMBED_FOOTER_TEXT("webhook.ad-create-embed.footer-text"),
+    WEBHOOK_AD_CREATED_EMBED_FOOTER_ICON("webhook.ad-create-embed.footer-icon"),
+    WEBHOOK_AD_CREATED_EMBED_THUMBNAIL("webhook.ad-create-embed.thumbnail"),
+    WEBHOOK_AD_CREATED_EMBED_IMAGE("webhook.ad-create-embed.image"),
+
+    WEBHOOK_AD_REMOVE_EMBED_URL("webhook.ad-remove-embed.url"),
+    WEBHOOK_AD_REMOVE_EMBED_ENABLED("webhook.ad-remove-embed.enabled"),
+    WEBHOOK_AD_REMOVE_EMBED_TITLE("webhook.ad-remove-embed.title"),
+    WEBHOOK_AD_REMOVE_EMBED_DESCRIPTION("webhook.ad-remove-embed.description"),
+    WEBHOOK_AD_REMOVE_EMBED_COLOR("webhook.ad-remove-embed.color"),
+    WEBHOOK_AD_REMOVE_EMBED_AUTHOR_NAME("webhook.ad-remove-embed.author-name"),
+    WEBHOOK_AD_REMOVE_EMBED_AUTHOR_URL("webhook.ad-remove-embed.author-url"),
+    WEBHOOK_AD_REMOVE_EMBED_AUTHOR_ICON("webhook.ad-remove-embed.author-icon"),
+    WEBHOOK_AD_REMOVE_EMBED_FOOTER_TEXT("webhook.ad-remove-embed.footer-text"),
+    WEBHOOK_AD_REMOVE_EMBED_FOOTER_ICON("webhook.ad-remove-embed.footer-icon"),
+    WEBHOOK_AD_REMOVE_EMBED_THUMBNAIL("webhook.ad-remove-embed.thumbnail"),
+    WEBHOOK_AD_REMOVE_EMBED_IMAGE("webhook.ad-remove-embed.image");
 
     private final String path;
 
