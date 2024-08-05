@@ -1,4 +1,4 @@
-language: "en" # Supported languages -> hu, de, en
+language: "en" # Supported languages -> hu, de, en, es
 date-format: "yyyy-MM-dd" # This format will appear in the database and in the GUI.
 command-on-click: "msg {target} Hello! I'm interested in {adName}!"
 expires-in: 7 # In days. The advertisement will expire in {} day from the starting date.

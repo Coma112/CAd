@@ -1,0 +1,19 @@
+# thanks for the translation : AlesixDev - https://github.com/AlesixDev
+message:
+  help:
+    - "&8&l━━━━━━━━━━━━━━━━━━━━━━━[━━&d&lCAD&8&l━━]━━━━━━━━━━━━━━━━━━━━━━━"
+    - ""
+    - "&d/cad reload &f- &7Recarga el plugin."
+    - "&d/cad menu &f- &7Abre el menú principal."
+    - "&d/cad new &7(&dtitle &7(separado con ;) &ddescription&7) &f- &7Crea un nuevo anuncio."
+    - "&d/cad remove &7(&did&7) &f- &7Elimina el anuncio"
+    - ""
+    - "&8&l━━━━━━━━━━━━━━━━━━━━━━━[━━&d&lCAD&8&l━━]━━━━━━━━━━━━━━━━━━━━━━━"
+  first-page: "&d&lCAD &8| &c¡Ya está en la primera página!"
+  last-page: "&d&lCAD &8| &c¡Ya está en la última página!"
+  reload: "&d&lCAD &8| &aHas recargado los archivos con éxito."
+  reached-max-ads: "&d&lCAD &8| &c¡Has alcanzado el límite máximo!"
+  new-usage: "&d&lCAD &8| &c¡Debe separar el título y la descripción con ';'!"
+  not-exists: "&d&lCAD &8| &cNo hay ningún anuncio con esta ID."
+  successful-remove: "&d&lCAD &8| &a¡Ha eliminado correctamente este anuncio!"
+  not-enough-money: "&d&lCAD &8| &c¡No tienes suficiente dinero para publicar!"
