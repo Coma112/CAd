@@ -69,6 +69,7 @@ public final class CAd extends JavaPlugin {
         saveResourceIfNotExists("locales/messages_en.yml");
         saveResourceIfNotExists("locales/messages_hu.yml");
         saveResourceIfNotExists("locales/messages_de.yml");
+        saveResourceIfNotExists("locales/messages_es.yml");
 
         language = new Language("messages_" + LanguageType.valueOf(ConfigKeys.LANGUAGE.getString()));
     }
