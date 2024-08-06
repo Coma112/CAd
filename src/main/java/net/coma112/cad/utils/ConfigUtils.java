@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +20,7 @@ public class ConfigUtils {
     @Getter
     private String name;
     private File config;
+    private YamlConfiguration defaultYml;
 
     public ConfigUtils(@NotNull String dir, @NotNull String name) {
         File file = new File(dir);
@@ -37,12 +40,21 @@ public class ConfigUtils {
         }
 
         yml = YamlConfiguration.loadConfiguration(config);
-        yml.options().copyDefaults(true);
         this.name = name;
+
+        InputStream defaultConfigStream = getClass().getClassLoader().getResourceAsStream(name + ".yml");
+
+        if (defaultConfigStream != null) {
+            defaultYml = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultConfigStream));
+            yml.options().copyDefaults(true);
+            addMissingKeys();
+            AdLogger.info("Loaded " + name + ".yml");
+        }
     }
 
     public void reload() {
         yml = YamlConfiguration.loadConfiguration(config);
+        addMissingKeys();
         save();
     }
 
@@ -64,7 +76,6 @@ public class ConfigUtils {
                 .stream()
                 .map(MessageProcessor::process)
                 .collect(Collectors.toList());
-
     }
 
     public List<String> getLoreList(@NotNull String path) {
@@ -92,5 +103,14 @@ public class ConfigUtils {
     public void setName(@NotNull String name) {
         this.name = name;
     }
-}
 
+    private void addMissingKeys() {
+        if (defaultYml == null) return;
+
+        boolean changed = defaultYml.getKeys(true)
+                .stream()
+                .anyMatch(key -> !yml.contains(key));
+
+        if (changed) save();
+    }
+}
