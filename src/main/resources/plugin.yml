@@ -1,5 +1,5 @@
 name: CAd
-version: '1.0.4'
+version: '1.0.5'
 main: net.coma112.cad.CAd
 api-version: '1.18'
 folia-supported: true

@@ -72,13 +72,16 @@ public class CommandAdvertisement {
 
         CAd.getDatabase().createAdvertisement(player, (title + " ").trim(), (description + " ").trim(), dateFormat.format(now), dateFormat.format(calendar.getTime()));
         Vault.getEconomy().withdrawPlayer(player, ConfigKeys.AD_PRICE.getInt());
-        Bukkit.getOnlinePlayers().forEach(players -> ConfigKeys.ADVERTISEMENT_BROADCAST.getStrings().forEach(line -> {
-            String message = line
-                    .replace("{title}", title)
-                    .replace("{description}", description)
-                    .replace("{player}", player.getName());
-            players.sendMessage(message);
-        }));
+
+        if (player.hasPermission("cad.chat")) {
+            Bukkit.getOnlinePlayers().forEach(players -> ConfigKeys.ADVERTISEMENT_BROADCAST.getStrings().forEach(line -> {
+                String message = line
+                        .replace("{title}", title)
+                        .replace("{description}", description)
+                        .replace("{player}", player.getName());
+                players.sendMessage(message);
+            }));
+        }
     }
 
     @Subcommand("remove")
